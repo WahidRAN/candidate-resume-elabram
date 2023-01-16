@@ -22,80 +22,192 @@
   </section>
 </template>
 
+<script setup>
+const itemsPerPage = 10
+const candidateHeaders = [
+  {
+    title: "no",
+    align: "start",
+    key: "index",
+  },
+  {
+    title: "photo",
+    align: "start",
+    sortable: false,
+    key: "avatar",
+  },
+  {
+    title: "name",
+    align: "start",
+    key: "name",
+  },
+  {
+    title: "ID number",
+    align: "start",
+    key: "id_number",
+  },
+  {
+    title: "email",
+    align: "start",
+    key: "email",
+  },
+  {
+    title: "register date",
+    align: "start",
+    key: "register_date",
+  },
+  {
+    title: "action",
+    align: "start",
+    sortable: false,
+    key: "action",
+  },
+];
+const candidates = [
+  {
+    index: 1,
+    avatar: "avatar",
+    name: "Fulan",
+    id_number: "123456",
+    email: "fulan@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default",
+  },
+  {
+    index: 2,
+    avatar: "avatar2",
+    name: "Fulan2",
+    id_number: "123459",
+    email: "fulan2@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default2",
+  },
+  {
+    index: 3,
+    avatar: "avatar",
+    name: "Fulan",
+    id_number: "123456",
+    email: "fulan3@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default",
+  },
+  {
+    index: 1,
+    avatar: "avatar",
+    name: "Fulan",
+    id_number: "123456",
+    email: "fulan@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default",
+  },
+  {
+    index: 2,
+    avatar: "avatar2",
+    name: "Fulan2",
+    id_number: "123459",
+    email: "fulan2@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default2",
+  },
+  {
+    index: 1,
+    avatar: "avatar",
+    name: "Fulan",
+    id_number: "123456",
+    email: "fulan@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default",
+  },
+  {
+    index: 2,
+    avatar: "avatar2",
+    name: "Fulan2",
+    id_number: "123459",
+    email: "fulan2@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default2",
+  },
+  {
+    index: 3,
+    avatar: "avatar",
+    name: "Fulan",
+    id_number: "123456",
+    email: "fulan3@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default",
+  },
+  {
+    index: 1,
+    avatar: "avatar",
+    name: "Fulan",
+    id_number: "123456",
+    email: "fulan@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default",
+  },
+  {
+    index: 2,
+    avatar: "avatar2",
+    name: "Fulan2",
+    id_number: "123459",
+    email: "fulan2@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default2",
+  },
+  {
+    index: 1,
+    avatar: "avatar",
+    name: "Fulan",
+    id_number: "123456",
+    email: "fulan@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default",
+  },
+  {
+    index: 2,
+    avatar: "avatar2",
+    name: "Fulan2",
+    id_number: "123459",
+    email: "fulan2@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default2",
+  },
+  {
+    index: 3,
+    avatar: "avatar",
+    name: "Fulan",
+    id_number: "123456",
+    email: "fulan3@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default",
+  },
+  {
+    index: 1,
+    avatar: "avatar",
+    name: "Fulan",
+    id_number: "123456",
+    email: "fulan@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default",
+  },
+  {
+    index: 2,
+    avatar: "avatar2",
+    name: "Fulan2",
+    id_number: "123459",
+    email: "fulan2@gmail.com",
+    register_date: new Date().toLocaleDateString(),
+    action: "default2",
+  },
+];
+</script>
+
 <script>
 export default {
   data() {
     return {
-      itemsPerPage: 10,
+      // itemsPerPage: 10,
       selected: [],
-      candidateHeaders: [
-        {
-          title: "no",
-          align: "start",
-          key: "index",
-        },
-        {
-          title: "photo",
-          align: "start",
-          sortable: false,
-          key: "avatar",
-        },
-        {
-          title: "name",
-          align: "start",
-          key: "name",
-        },
-        {
-          title: "ID number",
-          align: "start",
-          key: "id_number",
-        },
-        {
-          title: "email",
-          align: "start",
-          key: "email",
-        },
-        {
-          title: "register date",
-          align: "start",
-          key: "register_date",
-        },
-        {
-          title: "action",
-          align: "start",
-          sortable: false,
-          key: "action",
-        },
-      ],
-      candidates: [
-        {
-          index: 1,
-          avatar: "avatar",
-          name: "Fulan",
-          id_number: "123456",
-          email: "fulan@gmail.com",
-          register_date: new Date().toLocaleDateString(),
-          action: "default",
-        },
-        {
-          index: 2,
-          avatar: "avatar2",
-          name: "Fulan2",
-          id_number: "123459",
-          email: "fulan2@gmail.com",
-          register_date: new Date().toLocaleDateString(),
-          action: "default2",
-        },
-        {
-          index: 3,
-          avatar: "avatar",
-          name: "Fulan",
-          id_number: "123456",
-          email: "fulan3@gmail.com",
-          register_date: new Date().toLocaleDateString(),
-          action: "default",
-        },
-      ],
     };
   },
 };
