@@ -16,7 +16,7 @@
         show-select
         class="elevation-1 table-container"
         density="comfortable"
-        height="calc(100vh - 64px - 48px - 36px - 48px - 48px)"
+        height="calc(100vh - 64px - 48px - 36px - 48px - 48px - 24px)"
       ></v-data-table>
     </v-card>
   </section>
@@ -118,6 +118,9 @@ export default {
   }
   .table-card {
     width: calc(100% - 20% - 24px);
+    .table-card-header {
+      margin-bottom: 24px;
+    }
     .table-container {
       text-transform: capitalize;
       font-weight: 600;
